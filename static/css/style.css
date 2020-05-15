@@ -1,3 +1,45 @@
-body {
-    background-color: blue;
+body{
+    color: white !important;
+    background-color: #34495E !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    padding: 100px 10px 0px 20px;
+}
+/* Navigation Bar */
+nav{
+    padding: 0px !important;
+}
+.navbar{
+    background-color: #1ABC9C !important;
+    font-family: 'Black Ops One', cursive !important;
+}
+.navbar .container{
+    padding: 0px 5px 0px 0px !important;
+}
+.navbar-brand{
+    font-size: 30px !important;
+    color: #34495E !important;
+    padding-left: 5px !important;
+    padding-top: 30px !important;
+}
+.nav-item:hover{
+    background-color: #34495E;
+    border-radius: 5px;
+}
+.dropdown-item:hover{
+    background-color: #34495E !important;
+    border-radius: 5px;
+}
+
+/* Footer */
+.sticky-footer {
+    flex-shrink: none;
+    padding-bottom: 0px !important;
+  }
+
+/* MOBILE RESPOSITIVITY */
+
+@media only screen and (max-width: 768px){
+   .collapse .navbar-nav .nav-item{
+       text-align: center;
+   }
 }

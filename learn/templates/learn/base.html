@@ -1,21 +1,169 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jarvis-lee-project</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat+Alternates&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/png">
+
+    <title>Jarvis-Lee</title>
 </head>
+
 <body>
-    <header>
-        <h1>NAVIGATION BAR GOES HERE</h1>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            <a class="navbar-brand" href="#">Jarvis-Lee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Subjects
+                            </a>
 
-    {% block content %}
-    {% endblock content %}
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <a href="#" class="dropdown-item">Mathematics</a>
+                                <a href="#" class="dropdown-item">Science</a>
+                                <a href="#" class="dropdown-item">English</a>
+                                <a href="#" class="dropdown-item">Kiswahili</a>
+                                <a href="#" class="dropdown-item">Social Studies</a>
+                                <a href="#" class="dropdown-item">Religion</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3>Sunt aliqua incididunt reprehenderit Lorem velit cupidatat in magna eiusmod proident magna exercitation pariatur
+        voluptate.</h3>
+    <p>
+        Aliquip mollit quis excepteur elit labore tempor laborum enim non eiusmod eiusmod fugiat incididunt. Ullamco do
+        ad ipsum aliqua fugiat et nulla do in nostrud velit nostrud. Nisi aute culpa laborum veniam velit irure ut anim
+        nostrud reprehenderit. Ullamco nulla cillum cupidatat quis ea culpa consectetur sunt adipisicing. Exercitation
+        duis minim ea irure. Adipisicing aliquip mollit ad duis voluptate consequat. Aliquip fugiat irure consectetur
+        eu.
 
+        Fugiat eiusmod exercitation enim duis pariatur est. Proident pariatur esse laboris ullamco excepteur enim
+        laboris tempor. Dolor quis reprehenderit do sint occaecat in cillum eu et incididunt. Consectetur consequat
+        incididunt cupidatat consequat culpa minim id sit eiusmod. Qui consequat Lorem id est officia excepteur velit
+        duis aliqua. Id enim ea consectetur labore incididunt in est minim incididunt ex nisi duis fugiat velit.
+
+        Elit aute duis sit do nulla. Est laborum veniam cupidatat anim esse consectetur nostrud excepteur consectetur
+        laborum sint laborum consectetur. Do et nulla proident adipisicing ea laborum sit. Anim cillum duis nisi ex
+        irure eu ea excepteur pariatur sint laboris. Est culpa incididunt ad culpa enim consequat sit tempor magna
+        ullamco. Esse reprehenderit irure velit voluptate tempor aute voluptate est sunt fugiat ad. Ex pariatur elit
+        duis ad in ea fugiat adipisicing.
+
+        Laboris aliquip nostrud amet ut ex exercitation eu deserunt consequat in pariatur laboris sit voluptate. Aliquip
+        velit laboris esse nostrud do culpa. Est culpa adipisicing fugiat cillum exercitation pariatur.
+    </p>
+    <h4>Ullamco pariatur Lorem dolor adipisicing exercitation ex dolore.</h4>
+    <p>
+        Enim et velit ad in tempor ipsum esse esse consequat eu esse. Do aliqua cupidatat sunt qui consectetur enim sunt
+        occaecat. Et incididunt velit aute aute proident eu pariatur eu voluptate ipsum eiusmod voluptate. Commodo
+        cillum in aute minim ipsum ullamco laboris in officia nostrud voluptate sunt. Fugiat officia enim dolor
+        pariatur. Ipsum tempor aliquip adipisicing officia do voluptate.
+
+        Culpa ullamco consequat voluptate in ipsum veniam cillum non exercitation officia eu commodo nisi. Sit elit duis
+        ex amet eiusmod velit. Officia quis aliquip culpa dolor excepteur ex eu.
+
+        Lorem aliquip sunt ex incididunt. Mollit cillum ad qui dolor ex ad et esse. Reprehenderit adipisicing labore
+        officia culpa minim in et proident ut est exercitation do. Sit est enim laborum deserunt commodo veniam commodo
+        consequat reprehenderit exercitation.
+
+        Consectetur ad est ullamco tempor nisi labore quis esse elit. Eu dolor nisi do veniam adipisicing sunt est. Ea
+        deserunt nisi tempor consectetur minim non do minim non deserunt duis sint. Excepteur proident ex sint
+        voluptate.
+
+        Reprehenderit commodo cillum aliqua anim. Proident pariatur elit labore ipsum sint amet laboris nisi proident
+        dolor nulla cupidatat anim. Ut proident ipsum ipsum minim eiusmod non ad dolore dolore ut minim officia
+        excepteur. Exercitation anim duis tempor occaecat elit excepteur velit. Nostrud excepteur velit laborum enim.
+        Sint laboris mollit aliqua commodo.
+    </p>
+    <h3>Do nisi labore tempor dolor duis amet dolor amet nulla pariatur.</h3>
+    <p>
+        Eiusmod magna ea magna nisi irure elit dolore pariatur occaecat anim nisi. Consequat deserunt sunt qui eiusmod
+        sunt ea veniam mollit duis cupidatat ex non. Eiusmod voluptate Lorem consequat amet sunt Lorem ullamco pariatur.
+
+        Quis mollit consectetur occaecat adipisicing amet aliqua eu commodo eiusmod. Occaecat voluptate labore excepteur
+        ullamco consequat nulla aliquip cupidatat pariatur in. Ipsum adipisicing eu amet Lorem. Minim non in consectetur
+        reprehenderit ullamco incididunt ea. Duis sunt pariatur ipsum tempor sit deserunt ullamco aliquip ut quis
+        laboris veniam aliqua qui.
+
+        Sit magna ipsum ullamco consequat. Nulla pariatur amet elit dolor ut aliqua Lorem reprehenderit. Incididunt
+        reprehenderit cillum non fugiat irure sint anim commodo. In laborum in ea reprehenderit qui ea aliqua duis.
+
+        Ex aliquip proident esse proident exercitation ipsum do commodo ut. Est duis non duis magna laborum fugiat enim
+        id laboris exercitation sunt mollit minim. Minim veniam nulla labore Lorem qui proident exercitation duis qui
+        veniam. Et magna cillum enim adipisicing adipisicing aliquip exercitation et nisi. Sint incididunt minim id elit
+        irure dolor aute. Id occaecat deserunt nulla est aliquip voluptate exercitation nulla aute duis Lorem. Sunt elit
+        culpa cillum ullamco sit.
+
+        Reprehenderit veniam occaecat Lorem officia deserunt cillum tempor fugiat cupidatat aliqua. Elit proident
+        pariatur laboris ipsum. Et laboris ut elit aute esse amet aute fugiat ut. Quis commodo id Lorem sunt ullamco ut.
+
+        Nostrud qui in non cupidatat Lorem ex tempor. Nisi elit ad qui duis ut cillum tempor enim laborum. Magna
+        deserunt ad fugiat nostrud. Incididunt in adipisicing sunt non consequat Lorem fugiat adipisicing est esse enim
+        id duis. Occaecat mollit aute laboris ea sunt voluptate. Labore dolore do commodo aliquip qui tempor
+        exercitation occaecat reprehenderit. Ea nulla sit qui sit aliqua esse aute adipisicing non labore ipsum eiusmod
+        laboris consectetur.I
+    </p>
+    <!-- Footer -->
+    <footer class="footer text-center text-muted py-3">
+        <div class="container">
+            <hr>
+            <span class="font-weight-bold"> Copyright &copy; 2020 Wangwe <br> All Rights Reserved </span>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
     <script src="{% static 'js/script.js' %}"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
