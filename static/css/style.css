@@ -1,8 +1,8 @@
 body{
-    color: white !important;
     background-color: #34495E !important;
     font-family: 'Montserrat Alternates', sans-serif !important;
     padding: 100px 10px 0px 20px;
+    position: relative !important   ;
 }
 /* Navigation Bar */
 nav{
@@ -29,6 +29,25 @@ nav{
     background-color: #34495E !important;
     border-radius: 5px;
 }
+/* Dropdown on hover */
+.dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+    display: block;
+}
+/* --- */
+
+.fa{
+    color: #1ABC9C;
+}
+.btn-outline{
+    border: 1.4px solid #1ABC9C !important;
+}
+
+.btn-outline:hover{
+    background-color: #34495E;
+    color: azure !important;
+}
+
+
 
 /* Footer */
 .sticky-footer {
@@ -39,7 +58,16 @@ nav{
 /* MOBILE RESPOSITIVITY */
 
 @media only screen and (max-width: 768px){
+    html, body {
+        overflow-x: hidden;
+      }
+      body {
+        position: relative
+      }
    .collapse .navbar-nav .nav-item{
        text-align: center;
+   }
+   #results{
+       padding-bottom: 10px !important;
    }
 }
