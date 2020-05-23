@@ -4,7 +4,7 @@ from .models import Subject, Test
 
 def homeView(request):
     subjects = Subject.objects.all()
-    return render(request, 'learn/home.html', {'subjects': subjects})
+    return render(request, 'learn/base.html', {'subjects': subjects})
 
 def mathView(request):
     return HttpResponse("Mathematics")
