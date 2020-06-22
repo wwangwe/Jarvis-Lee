@@ -1,0 +1,135 @@
+/* 
+===================================================================
+------------------------BASE TEMPLATE------------------------------
+=================================================================== 
+*/
+body {
+    color: #ffffff !important;
+    background-color: #34495E !important;
+    font-family: 'Montserrat', sans-serif !important;
+    padding: 100px 10px 0px 20px;
+    position: relative !important;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+hr {
+    border: 1px solid #ffffff !important;
+}
+
+::selection {
+    color: #ffffff;
+    background-color: rgba(26, 188, 156, 0.75);
+}
+
+.form-control:focus {
+    border-color: #34495E !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 73, 94, 0.375) !important;
+}
+
+/* Navigation Bar */
+nav {
+    padding: 0px !important;
+}
+
+.navbar {
+    background-color: #1ABC9C !important;
+}
+
+.navbar-brand {
+    font-size: 32px !important;
+    font-family: 'Black Ops One', cursive !important;
+    color: #34495E !important;
+    padding-left: 5px !important;
+    padding-top: 30px !important;
+}
+
+.navbar-brand:hover,
+.btn {
+    color: #ffffff !important;
+}
+
+.navbar {
+    text-transform: uppercase;
+}
+
+.nav-item:hover {
+    background-color: #34495E;
+    border-radius: 5px;
+    color: #ffffff !important;
+}
+
+.dropdown-item:hover {
+    background-color: #34495E !important;
+}
+
+/* Dropdown on hover */
+.dropdown:hover .dropdown-menu,
+.btn-group:hover .dropdown-menu {
+    display: block;
+}
+
+/* --- */
+
+.fa {
+    color: #1ABC9C;
+}
+
+.btn-outline {
+    border: 1.4px solid #1ABC9C !important;
+}
+
+.btn-outline:hover {
+    background-color: #1ABC9C;
+    color: #000000 !important;
+}
+
+
+
+/* Footer */
+.sticky-footer {
+    flex-shrink: none;
+    padding-bottom: 0px !important;
+}
+
+/* MOBILE RESPOSITIVITY */
+
+@media only screen and (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative
+    }
+
+    .collapse .navbar-nav .nav-item {
+        text-align: center;
+    }
+
+    #results {
+        padding-bottom: 10px !important;
+    }
+}
+
+/* 
+===================================================================
+------------------------INDEX PAGE------------------------------
+=================================================================== 
+*/
+img.students,
+img.kids {
+    height: auto;
+    margin: auto;
+}

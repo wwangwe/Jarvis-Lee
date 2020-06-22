@@ -1,0 +1,60 @@
+{% extends 'learn/base.html' %}
+{% load static %}
+
+
+{% block landing %}
+<div class="row">
+    <div class="col-sm-6">
+        <img src="{% static 'img/students-on-computer.jpg' %}" alt="" srcset="" class="rounded img-fluid students">
+    </div>
+    <div class="col-sm-6">
+        <h1><b>If you can learn, <br> you can do anything! </b></h1>
+        <hr>
+        <p>
+            Well, grab this free opportunity we have offered you to learn and grow. Be the best you can be.
+        </p>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>
+                    Contribute to the content offered on this platform.
+                </p>
+                <a href="/admin/"> <button class="btn btn-outline"> Teach </button> </a>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    Explore a rich collection of studying materials of your liking.
+                </p>
+                <a href="{% url 'learn:notes' %}"> <button class="btn btn-outline"> Learn</button> </a>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    How much do you know and how well do you know it? Test yourself against standard questions!
+                </p>
+                <a href="{% url 'learn:tests' %}"> <button class="btn btn-outline"> Evaluate </button> </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- <div class="row">
+    <div class="col-sm-6">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt delectus nisi rerum harum impedit aliquam,
+        cumque, ipsa veritatis similique facere assumenda consectetur quia eligendi maxime porro, doloribus dolores
+        libero aut?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor harum aspernatur esse nostrum nobis enim,
+        voluptatum iure at distinctio repudiandae expedita recusandae, dicta rem aut? Officiis at nemo harum iusto
+        facere illo excepturi provident, sit rem animi nesciunt doloremque mollitia saepe deleniti, quae amet unde cum
+        praesentium soluta id quisquam. Labore aut minima corporis doloremque quod fugiat doloribus quae aliquam quas
+        cumque. Dolorum sint tenetur quisquam consequuntur sit illo non aliquam laboriosam consectetur, dolores a
+        nesciunt, nostrum deleniti esse perferendis possimus quaerat quos iusto quia praesentium quo. Aspernatur magnam
+        nulla corrupti commodi quam omnis nostrum. Voluptatum ab accusamus animi illo esse, doloremque amet hic facere?
+        Sit tenetur, minima ducimus repellendus expedita blanditiis natus dolor, earum similique est quod, quia
+        doloribus aperiam. Est inventore suscipit, nisi, explicabo illo veniam aspernatur minus eos ipsam similique
+        ducimus magni porro dignissimos atque fugit fuga sit sint consequuntur doloribus omnis ad vel quisquam ut?
+    </div>
+    <div class="col-sm-6">
+        <img src="{% static 'img/children-on-computer.jpg' %}" alt="" srcset="" class="rounded img-fluid kids">
+    </div>
+</div> -->
+{% endblock %}

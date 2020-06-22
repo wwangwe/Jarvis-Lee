@@ -1,0 +1,40 @@
+{% extends 'learn/base.html' %}
+kjsdns
+
+<div class="row">
+    <!-- <div class="col-sm-3" id="results">
+        <div class="card">
+            <div class="card-header"><b>Results</b></div>
+            <div class="card-body">
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Question 1 <i class="fa fa-check-circle"></i></li>
+                        <li class="list-group-item">Question 2 <i class="fa fa-times-circle"></i></li>
+                        <li class="list-group-item">Question 3 <i class="fa fa-check"></i></li>
+                        <li class="list-group-item">Question 4 <i class="fa fa-times"></i></li>
+                        <li class="list-group-item">Question 5 <i class="fa fa-check-square"></i></li>
+                        <li class="list-group-item">Question 6</li>
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    {% for q in questions %}
+    <div class="col-sm-8" style="padding-bottom: 2px;">
+        <div class="card text-center">
+            <div class="card-header"><b></b></div>
+            <div class="card-body">
+                {{q.question_text}}
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-outline">2</button>
+                <button type="submit" class="btn btn-outline">3</button>
+                <button type="submit" class="btn btn-outline">18</button>
+                <button type="submit" class="btn btn-outline">0</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

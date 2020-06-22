@@ -7,17 +7,17 @@ class SubjectAdmin(admin.ModelAdmin):
 admin.site.register(Subject, SubjectAdmin)
 
 class TestAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'score')
+    list_display = ('test_number','subject', 'max_score')
 
 admin.site.register(Test, TestAdmin)
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('test', 'question_text', 'choice_a', 'choice_b', 'choice_c', 'choice_d')
+    list_display = ('test', 'question_text')
 
 admin.site.register(Question, QuestionAdmin)
 
 class AnswerAdmin(admin.ModelAdmin):
-    list_display = ('question', 'solution')
+    list_display = ('question', 'answer_text', 'is_correct')
 
 admin.site.register(Answer, AnswerAdmin)
 

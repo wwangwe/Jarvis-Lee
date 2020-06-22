@@ -1,26 +1,36 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Subject, Test
+from django.views import generic
 
-def homeView(request):
-    subjects = Subject.objects.all()
-    return render(request, 'learn/base.html', {'subjects': subjects})
+from .models import Subject, Test, Question, Answer
 
-def mathView(request):
-    return HttpResponse("Mathematics")
 
-def scienceView(request):
-    return HttpResponse("Science")
+class  IndexView(generic.ListView):
+    template_name = 'learn/index.html'
+    context_object_name = 'subject_list'
+    
+    def get_queryset(self):
+        return Subject.objects.all()
 
-def englishView(request):
-    return HttpResponse("English")
 
-def kiswahiliView(request):
-    return HttpResponse("Kiswahili")
+class TestsView(generic.ListView):
+    template_name = 'learn/tests.html'
 
-def socialView(request):
-    return HttpResponse("Social Studies")
+    def get_queryset(self):
+        return HttpResponse("Tests Page")
 
-def religionView(request):
-    return HttpResponse("Religion")
+
+class NotesView(generic.ListView):
+    template_name = 'learn/notes.html'
+    context_object_name = 'subject_list'
+    
+    def get_queryset(self):
+        return Subject.objects.all()
+    
+
+class ResourcesView(generic.ListView):
+    template_name = 'learn/resources.html'
+
+    def get_queryset(self):
+        return HttpResponse("Resources")
 
