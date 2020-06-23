@@ -31,6 +31,18 @@ hr {
     background-color: rgba(26, 188, 156, 0.75);
 }
 
+.btn {
+    color: #ffffff !important;
+}
+
+.btn-outline {
+    border: 1.4px solid #1ABC9C !important;
+}
+
+.btn-outline:hover {
+    background-color: #1ABC9C;
+}
+
 .form-control:focus {
     border-color: #34495E !important;
     box-shadow: 0 0 0 0.2rem rgba(52, 73, 94, 0.375) !important;
@@ -53,19 +65,19 @@ nav {
     padding-top: 30px !important;
 }
 
-.navbar-brand:hover,
-.btn {
+.nav-link:hover,
+.navbar-brand:hover {
     color: #ffffff !important;
 }
 
-.navbar {
-    text-transform: uppercase;
+.navbar,
+.btn {
+    text-transform: uppercase !important;
 }
 
 .nav-item:hover {
     background-color: #34495E;
     border-radius: 5px;
-    color: #ffffff !important;
 }
 
 .dropdown-item:hover {
@@ -82,15 +94,6 @@ nav {
 
 .fa {
     color: #1ABC9C;
-}
-
-.btn-outline {
-    border: 1.4px solid #1ABC9C !important;
-}
-
-.btn-outline:hover {
-    background-color: #1ABC9C;
-    color: #000000 !important;
 }
 
 
