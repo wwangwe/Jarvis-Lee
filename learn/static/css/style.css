@@ -26,6 +26,11 @@ hr {
     border: 1px solid #ffffff !important;
 }
 
+.fas {
+    color: #1ABC9C !important;
+    font-size: xx-large;
+}
+
 ::selection {
     color: #ffffff;
     background-color: rgba(26, 188, 156, 0.75);
@@ -89,13 +94,6 @@ nav {
 .btn-group:hover .dropdown-menu {
     display: block;
 }
-
-/* --- */
-
-.fa {
-    color: #1ABC9C;
-}
-
 
 
 /* Footer */
