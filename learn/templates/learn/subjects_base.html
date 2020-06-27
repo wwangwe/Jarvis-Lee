@@ -1,1 +1,30 @@
 {% extends 'learn/base.html' %}
+{% load static %}
+
+{% block subjects %}
+<div class="row">
+    {% for subject in subject_list %}
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="underlay">
+                <img src="{% static 'img/students-on-computer.jpg' %}" alt="" srcset=""
+                    class="rounded img-fluid img-hover">
+                <div class="overlay">
+                    <div class="text">
+                        <a href="#"> <button class="btn btn-outline"> Click Me! </button> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <b>
+                    {{ subject.name }}
+                    {% block cont %}
+                    {% endblock %}
+                </b>
+            </div>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

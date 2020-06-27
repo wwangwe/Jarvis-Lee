@@ -53,6 +53,10 @@ hr {
     box-shadow: 0 0 0 0.2rem rgba(52, 73, 94, 0.375) !important;
 }
 
+.card {
+    color: #000000 !important;
+}
+
 /* Navigation Bar */
 nav {
     padding: 0px !important;
@@ -85,8 +89,15 @@ nav {
     border-radius: 5px;
 }
 
-.dropdown-item:hover {
+.dropdown a.btn {
+    color: #000000 !important;
+}
+
+.dropdown-item:hover,
+.dropdown a.btn:hover {
     background-color: #34495E !important;
+    color: #ffffff !important;
+
 }
 
 /* Dropdown on hover */
@@ -129,8 +140,31 @@ nav {
 ------------------------INDEX PAGE------------------------------
 =================================================================== 
 */
-img.students,
-img.kids {
-    height: auto;
-    margin: auto;
+/* img.students, */
+/* img.kids { */
+    /* height: auto; */
+    /* margin: auto; */
+/* } */
+
+img.img-hover:hover{
+    opacity: 0.8;
+    transform: scale(1.0125);
 }
+.overlay {
+    opacity: 0;
+  }
+  
+  .card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: #1ABC9C !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

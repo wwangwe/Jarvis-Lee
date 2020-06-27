@@ -15,9 +15,10 @@ class  IndexView(generic.ListView):
 
 class TestsView(generic.ListView):
     template_name = 'learn/tests.html'
-
+    context_object_name = 'subject_list'
+    
     def get_queryset(self):
-        return HttpResponse("Tests Page")
+        return Subject.objects.all()
 
 
 class NotesView(generic.ListView):
@@ -30,7 +31,9 @@ class NotesView(generic.ListView):
 
 class ResourcesView(generic.ListView):
     template_name = 'learn/resources.html'
-
+    context_object_name = 'subject_list'
+    
     def get_queryset(self):
-        return HttpResponse("Resources")
+        return Subject.objects.all()
+
 

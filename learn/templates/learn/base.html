@@ -46,20 +46,20 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenu"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Subjects
-                            </a>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenu" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Subjects
+                        </a>
 
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                {% for subject in subject_list %}
-                                <a href="#" class="dropdown-item">{{subject.name}}</a>
-                                {% endfor %}
-                            </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            {% for subject in subject_list %}
+                            <a href="#" class="dropdown-item">{{subject.name}}</a>
+                            {% endfor %}
                         </div>
-                    </li> -->
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'learn:tests' %}">Tests</a>
                 </li>
@@ -80,6 +80,9 @@
     </nav>
     <div style="min-height: 480px;">
         {% block landing %}
+        {% endblock %}
+        
+        {% block subjects %}
         {% endblock %}
     </div>
     <!-- Footer -->
