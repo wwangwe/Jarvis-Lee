@@ -22,7 +22,7 @@ h6 {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-hr {
+hr.custom {
     border: 1px solid #ffffff !important;
 }
 
