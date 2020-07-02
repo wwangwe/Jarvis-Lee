@@ -22,9 +22,28 @@ h6 {
     font-family: 'Montserrat', sans-serif !important;
 }
 
+a.custom-link {
+    text-decoration: underline !important;
+    color: #ffffff;
+}
+
+a.custom-link:hover {
+    color: #1ABC9C;
+}
+
 hr.custom {
     border: 1px solid #ffffff !important;
 }
+
+
+.photo-credit {
+    font-size: small;
+    position: absolute;
+    top: 95%;
+    left: 5%;
+    float: right;
+}
+
 
 .fas {
     color: #1ABC9C !important;
@@ -129,8 +148,15 @@ nav {
         text-align: center;
     }
 
-    #results {
-        padding-bottom: 10px !important;
+    .photo-credit {
+        position: sticky;
+        top: 95%;
+        left: 5%;
+        float: right;
+    }
+
+    a.custom-link {
+        text-decoration: underline !important;
     }
 }
 
@@ -141,23 +167,24 @@ nav {
 */
 /* img.students, */
 /* img.kids { */
-    /* height: auto; */
-    /* margin: auto; */
+/* height: auto; */
+/* margin: auto; */
 /* } */
 
-img.img-hover:hover{
+img.img-hover:hover {
     opacity: 0.8;
     transform: scale(1.0125);
 }
+
 .overlay {
     opacity: 0;
-  }
-  
-  .card:hover .overlay {
+}
+
+.card:hover .overlay {
     opacity: 1;
-  }
-  
-  .text {
+}
+
+.text {
     color: #1ABC9C !important;
     position: absolute;
     top: 50%;
@@ -166,4 +193,4 @@ img.img-hover:hover{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
