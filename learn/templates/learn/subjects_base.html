@@ -6,8 +6,14 @@
     {% for subject in subject_list %}
     <div class="col-sm-4">
         <div class="card">
+            <div class="card-footer">
+                <b>
+                    {{ subject.name }}
+                    {% block cont %}
+                    {% endblock %}
+                </b>
+            </div>
             <div class="underlay">
-                <div></div>
                 <div class="photo-credit text-center">Photo by
                     <a href="https://pixabay.com" target="_blank" class="custom-link" style="color: #1ABC9C;">Ernesto Eslava </a> on
                     <a href="https://pixabay.com" target="_blank" class="custom-link" style="color: #1ABC9C;">Pixabay </a>
@@ -18,13 +24,6 @@
                         <a href="{{subject.name.lower}}"> <button class="btn btn-outline"> Click Me! </button> </a>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <b>
-                    {{ subject.name }}
-                    {% block cont %}
-                    {% endblock %}
-                </b>
             </div>
         </div>
         <br>

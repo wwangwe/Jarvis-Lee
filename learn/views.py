@@ -2,7 +2,17 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 
+from django.core.paginator import Paginator
+
 from .models import Subject, Test, Question, Answer
+
+
+class BaseView(generic.ListView):
+    template_name = 'learn/base.html'
+    context_object_name = 'subject_list'
+
+    def get_queryset(self):
+        return Subject.objects.all()
 
 
 class  IndexView(generic.ListView):
@@ -30,12 +40,23 @@ class NotesView(generic.ListView):
 
 
 # Tests
-class MathTestsView(generic.ListView):
-    template_name = 'learn/math_tests.html'
-    context_object_name = 'subject_list'
+def math_tests(request):
+    quest_list = Question.objects.all()
+    quest_length = len(quest_list)
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(quest_list, 1)
+
+    try:
+        quest = paginator.page(page)
     
-    def get_queryset(self):
-        return Subject.objects.all()
+    except PageNotAnInteger:
+        quest = paginator.page(1)
+
+    except EmptyPage:
+        quest = paginator.page(paginator.num_pages)
+    
+    return render(request, 'learn/math_tests.html', {'quest': quest, 'quest_length': quest_length}) 
 
 
 class ScienceTestsView(generic.ListView):

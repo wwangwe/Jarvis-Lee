@@ -26,7 +26,6 @@ a.custom-link {
     text-decoration: underline !important;
     color: #ffffff;
 }
-
 a.custom-link:hover {
     color: #1ABC9C;
 }
@@ -147,16 +146,17 @@ nav {
     .collapse .navbar-nav .nav-item {
         text-align: center;
     }
-
     .photo-credit {
         position: sticky;
         top: 95%;
         left: 5%;
         float: right;
     }
-
     a.custom-link {
         text-decoration: underline !important;
+    }
+    div#quest_card{
+        padding: 0px !important;
     }
 }
 
@@ -165,16 +165,10 @@ nav {
 ------------------------INDEX PAGE------------------------------
 =================================================================== 
 */
-/* img.students, */
-/* img.kids { */
-/* height: auto; */
-/* margin: auto; */
-/* } */
-
-img.img-hover:hover {
+/* img.img-hover:hover {
     opacity: 0.8;
     transform: scale(1.0125);
-}
+} */
 
 .overlay {
     opacity: 0;
@@ -193,4 +187,14 @@ img.img-hover:hover {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+/* 
+===================================================================
+------------------------TESTS TEMPLATE-----------------------------
+=================================================================== 
+*/
+
+div#quest_card{
+    padding: 0px 300px 20px 300px;
 }
