@@ -4,7 +4,7 @@ from django.views import generic
 
 from django.core.paginator import Paginator
 
-from .models import Subject, Test, Question, Answer
+from .models import Subject, Question, Choice
 
 
 class BaseView(generic.ListView):
