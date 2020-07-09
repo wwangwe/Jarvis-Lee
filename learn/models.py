@@ -3,40 +3,41 @@ from django.db import models
 
 class Subject(models.Model):
     name          = models.CharField(max_length = 20)
-    symbol        = models.CharField(max_length = 5)
 
     def __str__(self):
-        return "%s" % (self.name)
-    
-
-class Test(models.Model):
-    test_number    = models.CharField(max_length = 25, null = True)
+        return self.name
+class Exam(models.Model):
+    name           = models.CharField(max_length=20)
     subject        = models.ForeignKey(Subject,on_delete=models.CASCADE)
-    max_score      = models.IntegerField()
-    
+
     class Meta:
-        order_with_respect_to = 'subject'
+        order_with_respect_to = 'name'
 
     def __str__(self):
-        return "%s" % (self.subject.name)
+        return self.name
 
 
 class Question(models.Model):
-    test            = models.ForeignKey(Test, null = True, on_delete = models.CASCADE)
-    question_text   = models.CharField(max_length = 255, null = True)
+    exam           = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    subject        = models.ForeignKey(Subject,on_delete=models.CASCADE)
+    max_score      = models.IntegerField(default=100)
+    question_text   = models.TextField(max_length = 255, null = False)
 
     class Meta:
-        order_with_respect_to = 'test'
+        order_with_respect_to = 'exam'
 
     def __str__(self):
-        return "%s %s" % (self.test, self.question_text)
+        return "%s" % (self.question_text)
 
-class Answer(models.Model):
-    question        = models.ForeignKey(Question, on_delete = models.CASCADE, related_name = "Answers")
-    answer_text     = models.CharField(max_length = 255, null = True)
+
+class Choice(models.Model):
+    question        = models.ForeignKey(Question, on_delete = models.CASCADE)
+    choice_text     = models.CharField(max_length = 255, null = False)
     is_correct      = models.NullBooleanField(default = None)
 
     class Meta:
         order_with_respect_to   = 'question'
         unique_together         = ('question', 'is_correct',)
-        
+    
+    def __str__(self):
+        return self.choice_text
