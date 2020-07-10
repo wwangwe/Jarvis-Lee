@@ -8,36 +8,35 @@ class SubjectAdmin(admin.ModelAdmin):
 admin.site.register(Subject, SubjectAdmin)
 
 
-class ChoiceAdmin(admin.ModelAdmin):
-    fields = ['choice_text', 'is_correct']
+# class ChoiceAdmin(admin.ModelAdmin):
+#     fields = ['choice_text', 'is_correct']
 
-admin.site.register(Choice, ChoiceAdmin)
+# admin.site.register(Choice, ChoiceAdmin)
 
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('exam', 'subject', 'max_score', 'question_text')
-    list_filter = ['subject']
+    list_display = ('exam', 'question_text')
+    list_filter = ['exam']
     search_fields = ['question_text']
     fieldsets = [
-        ('Question Information', {'fields': ['exam', 'subject', 'max_score']}),
+        ('Question Information', {'fields': ['exam']}),
         ('Question', {'fields': ['question_text']})
     ]
     inlines = [ChoiceInline]
 
 admin.site.register(Question, QuestionAdmin)
 
-class QuestionInline(admin.TabularInline):
+class QuestionInline(admin.StackedInline):
     model = Question
-    extra = 49
 
 class ExamAdmin(admin.ModelAdmin):
-    list_display = ('name', 'subject')
+    list_display = ('name', 'subject', 'score')
     list_filter = ['subject']
     fieldsets = [
-        ('Exam Information', {'fields':['name', 'subject']})
+        ('Exam Information', {'fields':['name', 'subject', 'score']})
     ]
     inlines = [QuestionInline]
 
