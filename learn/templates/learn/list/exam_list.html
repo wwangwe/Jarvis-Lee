@@ -1,4 +1,4 @@
-{% extends 'learn/base.html' %}
+{% extends 'learn/generic_base.html' %}
 {% load static %}
 
 {% block subjects %}
@@ -9,8 +9,7 @@
             <div class="card-footer">
                 <b>
                     {{ subject.name }}
-                    {% block cont %}
-                    {% endblock %}
+                    Exams
                 </b>
             </div>
             <div class="underlay">

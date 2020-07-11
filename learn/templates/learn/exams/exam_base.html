@@ -1,30 +1,22 @@
-{% extends 'learn/base.html' %}
+{% extends 'learn/base_generic.html' %}
 {% load static %}
 
 {% block subjects %}
 {% for q in quest %}
 <div id="quest_card">
     <div class="card">
-        <h3 class="text-center">{{ q.test }}</h3>
+        <h3 class="text-center">Exam Subject</h3>
         <div class="card-header"><i></b>Question {{ q.id }} of {{ quest_length }} </i></div>
         <div class="card-body">
             {{q.question_text}}
         </div>
         <div class="card-footer">
+            {% for c in choice %}
             <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">Lorem ipsum dolor sit.</button>
+                <button type="button" class="list-group-item list-group-item-action">{{ c.choice_text }}</button>
             </div> <br>
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">Lorem ipsum dolor sit
-                    amet.</button>
-            </div> <br>
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">Lorem, ipsum dolor.</button>
-            </div> <br>
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">Lorem ipsum dolor sit
-                    amet.</button>
-            </div> <br>
+            {% endfor %}
+            
             {% if quest.has_other_pages %}
 
             {% if quest.has_previous %}
