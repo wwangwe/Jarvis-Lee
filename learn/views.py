@@ -1,21 +1,13 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import DetailView, ListView
 
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import Subject, Question, Choice
-
-
-class BaseView(generic.ListView):
-    template_name = 'learn/base.html'
-    context_object_name = 'subject_list'
-
-    def get_queryset(self):
-        return Subject.objects.all()
+from .models import Exam, Question, Subject, Choice
 
 
-class  IndexView(generic.ListView):
+class  IndexView(ListView):
     template_name = 'learn/index.html'
     context_object_name = 'subject_list'
     
@@ -23,126 +15,72 @@ class  IndexView(generic.ListView):
         return Subject.objects.all()
 
 
-class TestsView(generic.ListView):
-    template_name = 'learn/tests.html'
+class ExamListView(ListView):
+    template_name = 'learn/list/exam_list.html'
     context_object_name = 'subject_list'
     
     def get_queryset(self):
         return Subject.objects.all()
 
 
-class NotesView(generic.ListView):
-    template_name = 'learn/notes.html'
+class NotesListView(ListView):
+    template_name = 'learn/list/notes_list.html'
     context_object_name = 'subject_list'
     
     def get_queryset(self):
         return Subject.objects.all()
 
 
-# Tests
-def math_tests(request):
-    quest_list = Question.objects.all()
+def MathExamView(request, pk):
+    exam = get_object_or_404(Exam, pk=pk)    
+    quest_list = exam.question_set.all()
     quest_length = len(quest_list)
-
-    page = request.GET.get('page', 1)
+    page = request.GET.get('question', 1)
     paginator = Paginator(quest_list, 1)
 
     try:
         quest = paginator.page(page)
-    
+
     except PageNotAnInteger:
         quest = paginator.page(1)
 
     except EmptyPage:
         quest = paginator.page(paginator.num_pages)
     
-    return render(request, 'learn/math_tests.html', {'quest': quest, 'quest_length': quest_length}) 
+    question = get_object_or_404(Question, pk=page)
+    choice_list = question.choice_set.all()
+
+    return render(request, 'learn/exams/math.html',
+        {
+        'quest': quest, 
+        'quest_length': quest_length,
+        'choice': choice_list
+        }) 
 
 
-class ScienceTestsView(generic.ListView):
-    template_name = 'learn/science_tests.html'
-    context_object_name = 'subject_list'
+def ScienceExamsView(request, pk):
+    exam = get_object_or_404(Exam, pk=pk)    
+    quest_list = exam.question_set.all()
+    quest_length = len(quest_list)
+    page = request.GET.get('question', 1)
+    paginator = Paginator(quest_list, 1)
+
+    try:
+        quest = paginator.page(page)
+
+    except PageNotAnInteger:
+        quest = paginator.page(1)
+
+    except EmptyPage:
+        quest = paginator.page(paginator.num_pages)
     
-    def get_queryset(self):
-        return HttpResponse("Science")
+    question = get_object_or_404(Question, pk=page)
+    choice_list = question.choice_set.all()
 
+    return render(request, 'learn/exams/math.html',
+        {
+        'quest': quest, 
+        'quest_length': quest_length,
+        'choice': choice_list
+        }) 
 
-class EnglishTestsView(generic.ListView):
-    template_name = 'learn/english_tests.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("English")
-
-
-class KiswahiliTestsView(generic.ListView):
-    template_name = 'learn/kiswahili_tests.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Kiswahili")
-
-
-class SocialTestsView(generic.ListView):
-    template_name = 'learn/social_tests.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Social")
-
-
-class ReligionTestsView(generic.ListView):
-    template_name = 'learn/religion_tests.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Religion")
-
-
-# Notes
-class MathNotesView(generic.ListView):
-    template_name = 'learn/math_notes.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Math")
-
-
-class ScienceNotesView(generic.ListView):
-    template_name = 'learn/science_notes.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Science")
-
-
-class EnglishNotesView(generic.ListView):
-    template_name = 'learn/english_notes.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("English")
-
-
-class KiswahiliNotesView(generic.ListView):
-    template_name = 'learn/kiswahili_notes.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Kiswahili")
-
-
-class SocialTestNotes(generic.ListView):
-    template_name = 'learn/social_notes.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Social")
-
-
-class ReligionNotesView(generic.ListView):
-    template_name = 'learn/religion_notes.html'
-    context_object_name = 'subject_list'
-    
-    def get_queryset(self):
-        return HttpResponse("Religion")
