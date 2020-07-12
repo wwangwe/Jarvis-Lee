@@ -1,36 +1,43 @@
-{% extends 'learn/base_generic.html' %}
+{% extends 'learn/generic_base.html' %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% block subjects %}
 {% for q in quest %}
 <div id="quest_card">
     <div class="card">
-        <h3 class="text-center">Exam Subject</h3>
-        <div class="card-header"><i></b>Question {{ q.id }} of {{ quest_length }} </i></div>
+        {% if DoesNotExistError %} <p><strong>{{ DoesNotExistError }}</strong></p> {% endif %}
+        <div class="card-header">
+        <h5 class="text-center">{{q.exam}}</h5>
+            <i></b>Question {{ q.id }} of {{ quest_length }} </i>
+        </div>
         <div class="card-body">
             {{q.question_text}}
         </div>
         <div class="card-footer">
             {% for c in choice %}
             <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">{{ c.choice_text }}</button>
-            </div> <br>
+  
+                <input type="radio" name="RadioInputName" value="Value1" id="{{c.choice_text}}" />
+                <label class="list-group-item" for="{{c.choice_text}}"> {{c.choice_text}}</label>
+                
+              </div> <br>
             {% endfor %}
-            
+
             {% if quest.has_other_pages %}
 
             {% if quest.has_previous %}
-            <a href="?page={{ quest.previous_page_number}}">
-                <button class="btn btn-outline float-left" style="color: #000 !important;"> Previous</button>
+            <a href="?question={{ quest.previous_page_number}}">
+                <button class="btn btn-outline custom-btn float-left"> Previous</button>
             </a>
             {% endif %}
 
             {% if quest.has_next %}
-            <a href="?page={{ quest.next_page_number}}">
-                <button class="btn btn-outline float-right" style="color: #000 !important;"> Next</button>
+            <a href="?question={{ quest.next_page_number}}">
+                <button class="btn btn-outline custom-btn float-right" > Next</button>
             </a>
             {% else %}
-            <button class="btn btn-outline float-right" style="color: #000 !important;"> Finish</button>
+            <button class="btn btn-outline custom-btn float-right"> Finish</button>
             {% endif %}
             {% endif %}
         </div>
