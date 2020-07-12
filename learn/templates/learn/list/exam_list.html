@@ -1,15 +1,14 @@
 {% extends 'learn/generic_base.html' %}
 {% load static %}
 
-{% block subjects %}
+{% block subjects_list %}
 <div class="row">
     {% for subject in subject_list %}
     <div class="col-sm-4">
         <div class="card">
             <div class="card-footer">
                 <b>
-                    {{ subject.name }}
-                    Exams
+                    {{ subject.name }} Exams
                 </b>
             </div>
             <div class="underlay">
